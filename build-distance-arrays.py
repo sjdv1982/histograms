@@ -141,8 +141,8 @@ if rank_chunks[-1] != nstruc:
     rank_chunks.append(nstruc)
 
 struc_type = np.dtype([
-    ("distance_ranges", np.float32, len(bins)-1),
-    ("rank_ranges", np.uint32, len(rank_chunks)-1),
+    ("distance_ranges", np.float32, (len(bins)-1,)),
+    ("rank_ranges", np.uint32, (len(rank_chunks)-1,)),
     ("data", np.uint32, (len(rank_chunks)-1, len(bins), 2)),
 ])
 
@@ -171,7 +171,7 @@ def calculate(receptor_atomtype, ligand_atomtype):
                 coordinates = curr_coordinates[nativeness_mask[min_rank:max_rank]]
                 for coor in receptor_coordinates:
                     if len(coordinates):
-                        dist = np.linalg.norm(coordinates - coor, axis=1)
+                        dist = np.linalg.norm(coordinates - coor, axis=2)
                         curr_counts, _ = np.histogram(dist, bins, density=False)
                         d[:-1, nat] += curr_counts.astype(np.uint32)
                         d[-1, nat] += (dist > bins[-1]).sum().astype(np.uint32)
@@ -182,9 +182,9 @@ def calculate(receptor_atomtype, ligand_atomtype):
 
 import multiprocessing
 pool = multiprocessing.Pool(args.nparallel)
-args = []
+jobs = []
 for receptor_atomtype in all_receptor_atomtypes:
     for ligand_atomtype in range(1, 99):
         #calculate(receptor_atomtype, ligand_atomtype)
-        args.append((receptor_atomtype, ligand_atomtype))
-pool.starmap(calculate, args)
+        jobs.append((receptor_atomtype, ligand_atomtype))
+pool.starmap(calculate, jobs)
