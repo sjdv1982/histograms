@@ -1,3 +1,6 @@
+Copyright 2021 Sjoerd de Vries
+License: GPLv3
+
 See in each script details about what inputs are needed.
 
 1. calculate all per-fragment RMSD files in parallel (lrmsd-all.py)
