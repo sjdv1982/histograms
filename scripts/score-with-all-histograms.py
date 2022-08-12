@@ -26,8 +26,7 @@ for l in open(complex_dir + "/receptor-reduced.pdb"):
 for atomtype in receptor:
     receptor[atomtype] = np.array(receptor[atomtype])
 
-def score_with_histogram(histogram, receptor_atomtype, ligand_coordinates):
-    nstruc = len(ligand_coordinates)
+def score_with_histogram(histogram, receptor_atomtype, nstruc):
     scores = np.zeros(nstruc)
     receptor_coordinates = receptor[receptor_atomtype]
 
@@ -47,25 +46,20 @@ def score_with_histogram(histogram, receptor_atomtype, ligand_coordinates):
     return scores
 
 nstruc = None
-
-all_ligand_coordinates = {}
+scores = None
 for ligand_atomtype in range(1, 99):
+    jobs = []
     f = "{}-{}.npy".format(motif, ligand_atomtype)
     ligand_coordinates_file = os.path.join(complex_dir, "coordinates", f)
     if not os.path.exists(ligand_coordinates_file):
         continue
     ligand_coordinates = np.load(ligand_coordinates_file)
     if nstruc is None:
-        nstruc = len(ligand_coordinates)        
+        nstruc = len(ligand_coordinates)
+        scores = np.zeros(nstruc)
     else:
         assert len(ligand_coordinates) == nstruc, ligand_coordinates_file        
-    all_ligand_coordinates[ligand_atomtype] = ligand_coordinates
-
-jobs = []
-for ligand_atomtype in range(1, 99):
-    if ligand_atomtype not in all_ligand_coordinates:
-        continue
-    ligand_coordinates = all_ligand_coordinates[ligand_atomtype]
+    
     for receptor_atomtype in range(1, 99):
         f = "{}-{}.json".format(receptor_atomtype, ligand_atomtype)
         histogram_file = os.path.join(histogram_dir, f)
@@ -73,21 +67,24 @@ for ligand_atomtype in range(1, 99):
             continue
         histogram = json.load(open(histogram_file))
         assert len(histogram["rank_chunks"]) == len(histogram["distance_bins"])        
-        jobs.append((histogram, receptor_atomtype, ligand_coordinates))    
+        jobs.append((histogram, receptor_atomtype, nstruc))
 
-"""
-# non-parallel
-scores = np.zeros(nstruc)
-for job in jobs:
-    histogram, receptor_atomtype, ligand_coordinates = job
-    scores += score_with_histogram(histogram, receptor_atomtype, ligand_coordinates)
-"""
+    """
+    # non-parallel
+    curr_scores = np.zeros(nstruc)
+    for job in jobs:
+        histogram, receptor_atomtype, _ = job
+        curr_scores += score_with_histogram(histogram, receptor_atomtype, nstruc)
+    """
 
-# parallel
-import multiprocessing
-pool = multiprocessing.Pool()
-all_scores = pool.starmap(score_with_histogram, jobs)
-scores = np.sum(all_scores, axis=0)
+    # parallel
+    
+    import multiprocessing
+    pool = multiprocessing.Pool()
+    all_curr_scores = pool.starmap(score_with_histogram, jobs)
+    curr_scores = np.sum(all_curr_scores, axis=0)
+
+    scores += curr_scores
 
 for score in scores:
     print("%.6f" % score)
