@@ -30,6 +30,7 @@ for coor in receptor_coordinates:
     dist = np.linalg.norm(ligand_coordinates - coor, axis=2)
     for n in range(len(histogram["rank_chunks"])):
         low_rank, high_rank = histogram["rank_chunks"][n]
+        low_rank, high_rank = int(low_rank), int(high_rank)
         distance_bins = histogram["distance_bins"][n]
         distance_thresholds = np.array([0] + [v[0] for v in distance_bins])
         rank_scores = np.array([v[1] for v in distance_bins] + [0])
