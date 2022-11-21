@@ -1,16 +1,15 @@
-# Currently not used, but can be used to write discretized coordinates to disk.
-# The "discretize_coordinates" function has been copied into score-with-histograms-discrete.py and optimized
 import sys
 import os
 import json
 import numpy as np
+import pandas as pd
 from hashlib import sha3_256
 
 def discretize_coordinates(coordinates, rank_chunks):
     bits10 = np.uint32(2**10-1)
 
     coor_min = np.floor(coordinates.min(axis=0).min(axis=0))
-    coordinates -= coor_min
+    coordinates = coordinates - coor_min
     rank_start = 0
 
     result_dtype = np.dtype([("index", np.uint32),("weight", np.uint8)],align=False)
@@ -46,7 +45,12 @@ def discretize_coordinates(coordinates, rank_chunks):
                     digit_hash[ind_xyz] = hash_x + hash_y + dcoorz
                     weights[ind_xyz] = weightxy * weightz
                     ind_xyz += 1
-        uniq, digit_index = np.unique(digit_hash, return_inverse=True)
+        # slow:
+        #uniq, digit_index = np.unique(digit_hash, return_inverse=True) 
+        # faster:
+        uniq = np.sort(pd.unique(digit_hash.flatten()))
+        digit_index = np.searchsorted(uniq, digit_hash) # two-thirds of the computation...
+
         digit_coors = np.empty((len(uniq), 3))
         digit_coors[:, 0] = (uniq >> 20) & bits10
         digit_coors[:, 1] = (uniq >> 10) & bits10

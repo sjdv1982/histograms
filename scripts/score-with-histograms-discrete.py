@@ -5,67 +5,10 @@ import sys, os
 import numpy as np
 import json
 from hashlib import sha3_256
-import pandas as pd
 
-def discretize_coordinates(coordinates, rank_chunks):
-    bits10 = np.uint32(2**10-1)
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+from discretize_coordinates import discretize_coordinates
 
-    coor_min = np.floor(coordinates.min(axis=0).min(axis=0))
-    coordinates = coordinates - coor_min
-    rank_start = 0
-
-    result_dtype = np.dtype([("index", np.uint32),("weight", np.uint8)],align=False)
-    digit_indices = np.empty(coordinates.shape[:2] + (8,), dtype=result_dtype)
-
-    all_digit_coors = []
-    for rank_start, rank_end in rank_chunks:
-        chunk = coordinates[rank_start:rank_end]    
-        if not len(chunk):
-            continue
-        discrete = []
-        for xyz in range(3):
-            coor = chunk[:, :, xyz]
-            minus = np.floor(coor).astype(np.uint32)
-            plus = minus + 1
-            assert plus.max() < 1024
-            wminus = plus - coor
-            wplus = coor - minus
-            discrete.append(((minus, wminus),(plus, wplus)))
-        # digit_chunk = np.empty(chunk.shape, np.uint32)
-        digit_hash = np.empty((8,) + chunk.shape[:2], np.uint32)
-        weights = np.empty((8,) + chunk.shape[:2])
-        ind_xyz = 0
-        for dcoorx, weightx in discrete[0]:
-            # digit_chunk[:, :, 0] = dcoorx
-            hash_x = (dcoorx << 20)
-            for dcoory, weighty in discrete[1]:
-                # digit_chunk[:, :, 1] = dcoory
-                hash_y = (dcoory << 10)
-                weightxy = weightx * weighty
-                for dcoorz, weightz in discrete[2]:
-                    # digit_chunk[:, :, 2] = dcoorz
-                    digit_hash[ind_xyz] = hash_x + hash_y + dcoorz
-                    weights[ind_xyz] = weightxy * weightz
-                    ind_xyz += 1
-        # slow:
-        #uniq, digit_index = np.unique(digit_hash, return_inverse=True) 
-        # faster:
-        uniq = np.sort(pd.unique(digit_hash.flatten()))
-        digit_index = np.searchsorted(uniq, digit_hash) # two-thirds of the computation...
-
-        digit_coors = np.empty((len(uniq), 3))
-        digit_coors[:, 0] = (uniq >> 20) & bits10
-        digit_coors[:, 1] = (uniq >> 10) & bits10
-        digit_coors[:, 2] = uniq & bits10
-        digit_index = digit_index.reshape(digit_hash.shape).astype(np.uint32)
-        print("Number of atoms: {}, unique on grid: {}".format(chunk.shape[0] * chunk.shape[1], len(uniq)), file=sys.stderr)
-        digit_indices["index"][rank_start:rank_end] = np.moveaxis(digit_index, 0, -1)
-        weights = np.round(weights * 255).astype(np.uint8)
-        digit_indices["weight"][rank_start:rank_end] = np.moveaxis(weights, 0, -1)
-        all_digit_coors.append(digit_coors)
-    
-    digit_coors = np.concatenate(all_digit_coors) + coor_min
-    return digit_coors, digit_indices
 
 receptor_file = sys.argv[1] # e.g. 1A9N/receptor-reduced.pdb
 
@@ -75,6 +18,15 @@ ligand_atomtype = int(sys.argv[3]) # e.g. 32
 
 histogram_files = sys.argv[4:] # e.g. histograms/6-38.json. 
     # Can be a list of Y-X.json, with the same X (ligand atom type)
+
+cache_dir = None
+try:
+    pos = histogram_files.index("--cache") 
+    cache_dir = histogram_files[pos+1]
+    histogram_files = histogram_files[:pos] + histogram_files[pos+2:]
+    del pos
+except IndexError:
+    pass
 
 for h in histogram_files:
     hh = os.path.splitext(os.path.split(h)[1])[0]
@@ -133,7 +85,18 @@ for histogram_file in sorted(histograms, key=lambda k: histograms[k][0]):
     if rankchunk_checksum0 != rankchunk_checksum:
         rankchunk_checksum = rankchunk_checksum0
 
-        digit_coordinates, digit_indices = discretize_coordinates(ligand_coordinates, rank_chunks)
+        digit_coordinates, digit_indices = None, None
+        if cache_dir is not None:
+            digit_pattern = os.path.join(cache_dir, "discrete-{}-{}".format(ligand_atomtype, rankchunk_checksum))
+            digitfile_1 = digit_pattern + "-coordinates.npy"
+            digitfile_2 = digit_pattern + "-indices.npy"
+            if os.path.exists(digitfile_1):
+                digit_coordinates = np.load(digitfile_1)
+            if os.path.exists(digitfile_2):
+                digit_indices = np.load(digitfile_2)
+
+        if digit_coordinates is None or digit_indices is None:
+            digit_coordinates, digit_indices = discretize_coordinates(ligand_coordinates, rank_chunks)
 
     index_pos = 0
     for n, (low_rank, high_rank) in enumerate(rank_chunks):
