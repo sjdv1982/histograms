@@ -54,9 +54,11 @@ def load_histograms(histogram_files, ligand_atomtype, nstruc):
         histograms[histogram_file] = rankchunk_checksum, rank_chunks, histogram
     return histograms
 
-def calc_score(all_receptor_coordinates, ligand_coordinates, ligand_atomtype, histograms, cache_dir):
+def calc_score(all_receptor_coordinates, ligand_coordinates, ligand_atomtype, histograms, cache_dir, *, nstruc=None):
 
-    scores = np.zeros(len(ligand_coordinates))
+    if nstruc is None:
+        nstruc = len(ligand_coordinates)
+    scores = np.zeros(nstruc)
 
 
     rankchunk_checksum = None
@@ -84,6 +86,8 @@ def calc_score(all_receptor_coordinates, ligand_coordinates, ligand_atomtype, hi
                     digit_indices = np.load(digitfile_2)
 
             if digit_coordinates is None or digit_indices is None:
+                if ligand_coordinates is None:
+                    raise Exception("Cache miss, and no ligand coordinates provided: {}".format(digit_pattern))
                 digit_coordinates, digit_indices = discretize_coordinates(ligand_coordinates, rank_chunks)
 
         index_pos = 0
