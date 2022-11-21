@@ -1,6 +1,6 @@
 # scores with all atomtype-atomtype interactions
 # Assumes that <complex-dir>/receptor-reduced exists
-# as well as <complex-dir>/coordinates/X-Y.npy, where X and Y are receptor and ligand atomtypes
+# as well as <complex-dir>/coordinates/X-Y.npy, where X and Y are motif and ligand atomtypes
 # histogram_dir must contain X-Y.json files.
 
 import sys, os
