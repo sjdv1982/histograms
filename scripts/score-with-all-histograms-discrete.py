@@ -27,7 +27,13 @@ random.shuffle(ligand_atomtypes)
 receptor_atomtypes = sorted(list(all_receptor_coordinates.keys()))
 scores = None
 for ligand_atomtype in ligand_atomtypes:
-    histogram_files = ["{}/{}-{}.json".format(histogram_dir, k, ligand_atomtype) for k in receptor_atomtypes]
+    histogram_files0 = ["{}/{}-{}.json".format(histogram_dir, k, ligand_atomtype) for k in receptor_atomtypes]
+    histogram_files = []
+    for f in histogram_files0:
+        if not os.path.exists(f):
+            print("WARNING: {} does not exist".format(f),file=sys.stderr)
+        else:
+            histogram_files.append(f)
     histograms = load_histograms(histogram_files, ligand_atomtype, nstruc)
     curr_scores = calc_score(all_receptor_coordinates, None, ligand_atomtype, histograms, cache_dir, nstruc=nstruc)
     if scores is None:
