@@ -120,11 +120,11 @@ def make_histogram(dist_array_file, rank_chunks, outfile):
     for start, end in rank_chunks:
         try:
             startpos = rank_ranges.index(start)
-        except IndexError:
+        except ValueError:
             raise ValueError("{} not in rank ranges".format(start)) from None
         try:
             endpos = rank_ranges.index(end)
-        except IndexError:
+        except ValueError:
             if end == rank_chunks[-1][1]:
                 endpos = len(rank_ranges) - 1
             else:
