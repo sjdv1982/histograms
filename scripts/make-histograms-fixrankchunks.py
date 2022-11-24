@@ -167,7 +167,6 @@ def make_histogram(dist_array_file, rank_chunks, outfile):
             threshold = distance_ranges[boundary_pos + 1]
             if nat > 0:
                 log_odds = log((nat/(nat + nonnat)) / fnat)
-                log_odds += log(fnat)  # calibrate to get absolute log(p) of being native
             else:
                 log_odds = -1000
             curr_values.append((threshold, log_odds))
@@ -176,7 +175,7 @@ def make_histogram(dist_array_file, rank_chunks, outfile):
         #sc += score(*data_chunk[start:].sum(axis=0), fnat)
         #print(sc)
         if not chunk_best_boundaries:
-            curr_values = [[0, log(fnat)]]
+            curr_values = [[0, 0]]
         values.append(curr_values)
     potential = {
         "rank_chunks": rank_chunks,
