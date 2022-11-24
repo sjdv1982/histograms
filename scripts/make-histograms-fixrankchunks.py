@@ -127,7 +127,8 @@ def make_histogram(dist_array_file, rank_chunks, outfile):
         except IndexError:
             if end == rank_chunks[-1][1]:
                 endpos = len(rank_ranges) - 1
-            raise ValueError("{} not in rank ranges".format(end)) from None
+            else:
+                raise ValueError("{} not in rank ranges".format(end)) from None
         data_chunks.append(data[startpos:endpos].sum(axis=0))
     best_results = [optimize_boundaries(data_chunk, fnat) for data_chunk in data_chunks]
 
