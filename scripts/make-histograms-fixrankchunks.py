@@ -107,6 +107,7 @@ def optimize_boundaries(data, fnat):
 def make_histogram(dist_array_file, rank_chunks, outfile):
     dist_array = np.load(dist_array_file) # distance array, generated with build-distance-arrays.py
     distance_ranges = [0] + dist_array["distance_ranges"].tolist()
+    distance_ranges2 = distance_ranges + [999]
     rank_ranges = [0] + dist_array["rank_ranges"].astype(int).tolist()
     data = dist_array["data"].astype(np.uint32)  # counts
     assert data.shape[0] == len(rank_ranges)-1, (data.shape, len(rank_ranges)-1)
@@ -154,29 +155,28 @@ def make_histogram(dist_array_file, rank_chunks, outfile):
 
     best = select(best_chunk_scores,nparameters)
     best_nboundaries = best[1]
-    best_boundaries = [best_results[b][k][-1][0] for b,k in enumerate(best_nboundaries)]
-    
-    print("FINAL", best_nboundaries, best_boundaries)
+    best_boundaries = [best_results[b][k][-1][0] for b,k in enumerate(best_nboundaries)]    
+    ### print("FINAL", best_nboundaries, best_boundaries)
     bestscores = [best_results[b][k][-1][1] for b,k in enumerate(best_nboundaries)] 
-    #print(best[0], bestscores, sum(bestscores))
+    ### print(best[0], sum(bestscores))
     values = []
-    for data_chunk, chunk_best_boundaries in zip(data_chunks, best_boundaries):
+    for data_chunk, chunk_best_boundaries, best_score in zip(data_chunks, best_boundaries, bestscores):
+        chunk_best = chunk_best_boundaries + (len(distance_ranges)-1,)
         start = 0
-        #sc = 0            
+        ### sc = 0  ###
         curr_values = []
-        for boundary_pos in chunk_best_boundaries:
+        for boundary_pos in chunk_best:
             nat, nonnat = data_chunk[start:boundary_pos+1].sum(axis=0)
-            #sc0 = score(nat, nonnat, fnat)
-            threshold = distance_ranges[boundary_pos + 1]
+            threshold = distance_ranges2[boundary_pos + 1]
             if nat > 0:
                 log_odds = log((nat/(nat + nonnat)) / fnat)
             else:
                 log_odds = -1000
             curr_values.append((threshold, log_odds))
-            #sc += sc0
+            ### sc += score(nat, nonnat, fnat) ###  
             start = boundary_pos+1
-        #sc += score(*data_chunk[start:].sum(axis=0), fnat)
-        #print(sc)
+        assert start == len(data_chunk), (start, len(data_chunk))
+        ### print(sc, best_score)
         if not chunk_best_boundaries:
             curr_values = [[0, 0]]
         values.append(curr_values)
@@ -190,7 +190,8 @@ rank_chunks = json.load(open(args.rank_chunks))
 
 
 import multiprocessing
-pool = multiprocessing.Pool(args.nparallel)
+if args.nparallel is None or args.nparallel > 1:
+    pool = multiprocessing.Pool(args.nparallel)
 pool_args = []
 for receptor_type in range(1, 99):
     for ligand_type in range(1, 99):
@@ -201,4 +202,8 @@ for receptor_type in range(1, 99):
             outfile = os.path.join(args.output_dir, f)
             pool_args.append((dist_array_file, rank_chunks, outfile))
 
-pool.starmap(make_histogram, pool_args)
+if args.nparallel is None or args.nparallel > 1:
+    pool.starmap(make_histogram, pool_args)
+else:
+    for args in pool_args:
+        make_histogram(*args)
