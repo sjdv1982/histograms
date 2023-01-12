@@ -1,18 +1,21 @@
 """
-218 cases
+220 cases
 
-ATTRACT: 81 successes 
-  in the top 500k (50 % of all natives OR at least 1000)
-paste ATTRACT-5A-top500k.txt  natives-5A.txt | awk 'NR > 1 && $1 >= 1000 || $1/$2 >= 0.5'  | wc -l
+ATTRACT: 57 successes
+  in the top 2M (60 % of all natives)
+paste ATTRACT-5A-top2M.txt  natives-5A.txt | awk 'NR > 1 && $1/$2 >= 0.6'  | wc -l
+
+Histograms: 53 successes
 """
 
 import numpy as np
-selected = np.loadtxt("histo-5A-top50k.txt", skiprows=1).astype(int)
+ranked = np.loadtxt("histo-5A-top500k.txt", skiprows=1).astype(int)
 nnat = np.loadtxt("natives-5A.txt", skiprows=1).astype(int)
-frac = selected.astype(float) / nnat[:, None]
+#ranked = ranked[:48]; nnat = nnat[:48] ###
+frac = ranked.astype(float) / nnat[:, None]
 
-success = (selected >= 1000) | (frac >= 0.5)
-
+success = (frac >= 0.6)
+to_select = 4
 
 def select_columns(suc, score, best_score, selection, mincol, to_select):
     colsum = suc[:, mincol:].sum(axis=0)
@@ -49,4 +52,5 @@ def select_columns(suc, score, best_score, selection, mincol, to_select):
 
 colsum = success.sum(axis=0)
 success2 = success[:, np.argsort(-colsum)]
-selected, best = select_columns(success2, 0, 0, [], 0, 10)
+selected, best = select_columns(success2, 0, 0, [], 0, to_select)
+selx = np.argsort(-colsum)[selected]
