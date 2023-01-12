@@ -1,15 +1,18 @@
 """
 220 cases
+TO REMOVE: 4QQB-11-CAC (#166), 4BS2-1-UGU (#131)
 
 ATTRACT: 57 successes
   in the top 2M (60 % of all natives)
 paste ATTRACT-5A-top2M.txt  natives-5A.txt | awk 'NR > 1 && $1/$2 >= 0.6'  | wc -l
 
-Histograms: 53 successes
+
 """
 
 import numpy as np
-ranked = np.loadtxt("histo-5A-top500k.txt", skiprows=1).astype(int)
+
+to_remove = [166,131,218,219,220]
+#ranked = np.loadtxt("histo-5A-top500k.txt", skiprows=1).astype(int)
 nnat = np.loadtxt("natives-5A.txt", skiprows=1).astype(int)
 #ranked = ranked[:48]; nnat = nnat[:48] ###
 frac = ranked.astype(float) / nnat[:, None]

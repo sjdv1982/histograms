@@ -14,6 +14,8 @@ for lnr, l in enumerate(open("my_rrm_alignment.fasta")):
     seqs.append(l.upper())
     if len(l) != 243: print(l, len(l), lnr)
 
+code_to_aln.pop("6D12") # not in docking runs
+code_to_aln.pop("2I2Y") # not in docking runs
 
 def get_seqid(seq1, seq2):
     assert len(seq1) == len(seq2)
@@ -95,12 +97,14 @@ for nr, l in enumerate(open("curben.in-elem")):
     except KeyError:
         print("{} not in alignment, consider it as non-redundant (manually verified for 3MOJ,3RW6)".format(code))
         testset = {code}
-        trainset = {c for c in code_to_aln if c != code}
+        trainset = {c for c in code_to_docking if c != code}
         for group in groups:
             group[1].add(code)
         groups.append((testset, trainset))
         code_to_docking[code] = []
     code_to_docking[code].append(nr+1)
+
+print("Final redundancy sets: {}".format(len(groups)))
 
 os.system("rm -f redundancy-set-*.txt")
 print("redundancy-set-*-codes.txt refer to PDB codes")
@@ -116,3 +120,16 @@ for groupnr, group in enumerate(groups):
         for code in sorted(group[1]):
             print(code,end=" ",file=f)
         print(file=f)        
+
+for groupnr, group in enumerate(groups):
+    with open("redundancy-set-{}-indices.txt".format(groupnr+1), "w") as f:
+        print("Test set", file=f)
+        for code in sorted(group[0]):
+            for ind in code_to_docking[code]:
+                print(ind,end=" ",file=f)
+        print(file=f)
+        print("Training set", file=f)
+        for code in sorted(group[1]):
+            for ind in code_to_docking[code]:
+                print(ind,end=" ",file=f)
+        print(file=f)                
