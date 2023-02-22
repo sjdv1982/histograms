@@ -1,0 +1,19 @@
+# Training set #1, partition #1
+# Selected potential: 95 => 2MGZ 7 UGU
+# Members: 40 59 79 82 83 94 95 99 106 107 113 118 134 137 144 150 161 162 211 215 218
+
+# Training set #1, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 58 63 65 68 69 70 78 85 86 110 111 132 133 136 151 152 153 183 184 185 190
+
+# Training set #1, partition #3
+# Selected potential: 192 => 6DCL 1 UAG
+# Members: 13 14 17 18 41 50 60 64 73 74 75 76 92 93 96 103 104 114 115 126 127 138 139 165 173 175 176 177 179 180 182 186 188 192 193 194
+
+# Training set #1, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 62 66 67 72 89 90 91 119 121 122 135 156 172 195 196 197 198
+
+1 3 3 28 [ 94 150 191 195] ['2MGZ 7 UGU', '4N0T 10 AGA', '6DCL 1 UAG', '6DCL 5 UUA']
+**************************************************
+

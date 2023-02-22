@@ -1,0 +1,769 @@
+# Training set #1, partition #1
+# Selected potential: 64 => 2G4B 3 UUU
+# Members: 9 16 62 63 64 89 90 91 96 156 209 212 219 220
+
+# Training set #1, partition #2
+# Selected potential: 72 => 2KM8 1 UAU
+# Members: 8 36 42 43 72 73 74 92 103 104 106 121 122 127 140 146 157 171 172 197 198
+
+# Training set #1, partition #3
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #1, partition #4
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 75 82 83 93 94 105 107 114 115 126 138 139 144 161 162 173 174 175 176 177 179 180 182 186 188 192 193 194
+
+# COMBINE 1A9N 2 AUU 0.2 0.2
+# COMBINE 1A9N 3 UUG 0.0 0.0
+# COMBINE 1A9N 4 UGC 0.0 0.0
+# COMBINE 1A9N 5 GCA 30.2 35.3
+# COMBINE 1A9N 6 CAG 68.9 102.2
+# COMBINE 1A9N 7 AGU 68.5 84.3
+# COMBINE 1DRZ 1 AUU 26.3 26.3
+# COMBINE 1DRZ 2 UUG 3.1 3.1
+# COMBINE 1DRZ 3 UGC 22.5 22.6
+# COMBINE 1DRZ 4 GCA 30.7 33.2
+# COMBINE 1DRZ 5 CAC 61.9 78.9
+# COMBINE 1DRZ 6 ACU 1.1 1.3
+# COMBINE 1DRZ 7 CUC 0.0 0.0
+# COMBINE 1M5K 3 UGC 37.7 38.6
+# COMBINE 1M5K 4 GCA 60.6 78.5
+# COMBINE 1M5K 5 CAC 82.1 118.7
+# COMBINE 1M5K 6 ACU 35.6 44.7
+# COMBINE 1URN 3 UGC 33.0 35.3
+# COMBINE 1URN 4 GCA 54.3 65.5
+# COMBINE 1URN 5 CAC 61.1 77.4
+# COMBINE 4YB1 1 CAC 0.0 0.0
+# COMBINE 6F4G 2 UUG 11.3 11.3
+# COMBINE 6F4G 3 UGC 6.8 6.8
+# COMBINE 6F4G 4 GCA 11.6 11.6
+# COMBINE 6F4G 5 CAG 0.7 0.7
+# COMBINE 6F4G 6 AGU 0.1 0.1
+# COMBINE 6F4H 5 CAC 60.1 60.3
+# COMBINE 6F4H 6 ACC 69.9 70.0
+1 3 8 28 [ 63  71 150 174] ['2G4B 3 UUU', '2KM8 1 UAU', '4N0T 10 AGA', '5MPG 1 UAG']
+**************************************************
+
+# Training set #2, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 3 4 5 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 60 74 83 84 100 115 118 137 138 171 172 200 201 204
+
+# Training set #2, partition #2
+# Selected potential: 122 => 3NNH 3 GUU
+# Members: 6 82 89 96 97 114 119 120 121 122 123 127 134 139 202 203 209 212 219
+
+# Training set #2, partition #3
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 64 65 68 69 70 78 79 85 86 94 110 113 132 133 136 151 152 153 183 184 185 190 211
+
+# Training set #2, partition #4
+# Selected potential: 218 => 6GD3 3 UUU
+# Members: 17 40 50 59 62 63 75 99 103 104 105 106 107 111 112 126 144 161 162 215 218
+
+# COMBINE 5HO4 1 AGG 29.1 43.3
+# COMBINE 5HO4 2 GGA 12.8 15.4
+# COMBINE 5MPG 1 UAG 93.4 191.2
+# COMBINE 5MPG 2 AGG 97.2 166.8
+# COMBINE 5MPG 3 GGU 94.8 145.2
+# COMBINE 5MPG 4 GUC 31.0 40.0
+# COMBINE 5MPL 1 CAG 99.0 212.8
+# COMBINE 5MPL 2 AGU 88.9 119.2
+# COMBINE 5MPL 3 GUU 10.6 15.4
+# COMBINE 5WWE 1 GGG 1.0 1.1
+# COMBINE 5WWE 2 GGA 0.0 0.0
+# COMBINE 5WWG 1 AGG 35.8 53.4
+# COMBINE 5WWG 2 GGA 59.1 60.2
+# COMBINE 6DCL 1 UAG 90.9 177.8
+# COMBINE 6DCL 2 AGA 78.2 109.2
+# COMBINE 6DCL 3 GAU 43.7 46.2
+# COMBINE 6DCL 4 AUU 0.0 0.0
+# COMBINE 6DCL 5 UUA 12.8 12.8
+# COMBINE 6DCL 6 UAG 49.5 61.3
+# COMBINE 6DCL 7 AGC 80.8 99.8
+2 8 8 20 [ 44 121 150 217] ['1M5K 4 GCA', '3NNH 3 GUU', '4N0T 10 AGA', '6GD3 3 UUU']
+**************************************************
+
+# Training set #3, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 74 84 100 115 118 127 137 171 177 200 201 202 203 204
+
+# Training set #3, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 58 63 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #3, partition #3
+# Selected potential: 192 => 6DCL 1 UAG
+# Members: 17 50 59 60 64 73 75 76 83 92 93 94 95 96 103 104 107 114 126 138 139 173 175 176 179 180 182 186 188 192 193 194
+
+# Training set #3, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 195 196 197 198
+
+# COMBINE 1B7F 1 UGU 0.0 0.0
+# COMBINE 1B7F 2 GUU 0.0 0.0
+# COMBINE 1B7F 3 UUU 0.2 0.2
+# COMBINE 1B7F 4 UUU 3.4 3.6
+# COMBINE 1B7F 5 UUU 28.9 41.6
+# COMBINE 1B7F 6 UUU 79.8 142.2
+# COMBINE 1B7F 7 UUU 83.1 130.7
+# COMBINE 1B7F 8 UUU 30.6 33.8
+# COMBINE 1FXL 1 UUU 1.4 1.4
+# COMBINE 1FXL 2 UUU 11.1 11.1
+# COMBINE 1FXL 3 UUA 16.3 16.3
+# COMBINE 1FXL 4 UAU 5.8 6.1
+# COMBINE 1FXL 5 AUU 52.2 55.8
+# COMBINE 1FXL 6 UUU 95.2 157.4
+# COMBINE 1G2E 1 UAU 10.2 10.2
+# COMBINE 1G2E 2 AUU 0.0 0.0
+# COMBINE 4ED5 1 UUU 0.4 0.4
+# COMBINE 4ED5 2 UUU 10.6 10.6
+# COMBINE 4ED5 3 UUA 12.6 12.6
+# COMBINE 4ED5 4 UAU 29.9 32.2
+# COMBINE 4ED5 5 AUU 61.6 67.5
+# COMBINE 4QQB 1 UUU 0.9 0.9
+# COMBINE 4QQB 2 UUU 10.9 10.9
+# COMBINE 4QQB 3 UUU 21.5 21.5
+# COMBINE 4QQB 4 UUU 39.2 39.9
+# COMBINE 4QQB 5 UUU 69.2 102.8
+# COMBINE 4QQB 6 UUG 32.4 43.2
+# COMBINE 4QQB 7 UGA 24.6 24.7
+# COMBINE 4QQB 8 GAG 39.7 44.4
+# COMBINE 4QQB 10 GCA 65.4 72.9
+# COMBINE 4QQB 12 ACG 49.6 60.6
+# COMBINE 4QQB 13 CGU 7.1 7.4
+# COMBINE 4QQB 14 GUG 1.8 1.8
+3 4 6 33 [ 44 150 191 195] ['1M5K 4 GCA', '4N0T 10 AGA', '6DCL 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #4, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #4, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #4, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #4, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 6G2K 1 UUU 19.3 19.4
+# COMBINE 6G2K 2 UUU 61.6 96.2
+# COMBINE 6G2K 3 UUU 73.2 128.4
+# COMBINE 6G2K 4 UUU 58.7 67.4
+# COMBINE 6GC5 3 UUU 48.3 50.8
+# COMBINE 6GD2 2 UUA 7.5 8.3
+# COMBINE 6GD2 3 UAU 32.9 37.9
+# COMBINE 6GD2 4 AUU 32.2 35.3
+# COMBINE 6GD3 1 UAU 22.1 25.9
+# COMBINE 6GD3 2 AUU 45.8 64.2
+# COMBINE 6GD3 3 UUU 74.7 124.6
+# COMBINE 6GD3 4 UUA 78.2 116.4
+4 0 4 12 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #5, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #5, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #5, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #5, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 135 156 172 180 195 196 197 198
+
+# COMBINE 3NNH 2 UGU 100.0 120.6
+# COMBINE 3NNH 3 GUU 100.0 142.1
+# COMBINE 3NNH 4 UUU 63.2 90.5
+# COMBINE 3NNH 5 UUU 16.2 18.6
+# COMBINE 3NNH 6 UUG 34.1 45.8
+# COMBINE 3NNH 7 UGU 83.5 151.0
+# COMBINE 3NNH 8 GUU 97.7 259.5
+5 4 5 7 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #6, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #6, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #6, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #6, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 1ZH5 4 GUU 0.6 0.6
+# COMBINE 1ZH5 5 UUU 1.3 1.4
+# COMBINE 2VOD 4 UUU 51.5 80.7
+# COMBINE 2VON 3 AUU 22.8 25.2
+6 0 0 4 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #7, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #7, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #7, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #7, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2HYI 1 UUU 81.7 89.3
+# COMBINE 2HYI 2 UUU 86.0 111.5
+# COMBINE 2HYI 3 UUU 100.0 100.6
+# COMBINE 2J0S 1 UUU 78.7 83.1
+7 4 4 4 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #8, partition #1
+# Selected potential: 24 => 1DRZ 3 UGC
+# Members: 3 19 20 22 23 24 25 31 32 33 38 44 45 49 52 53 69 70 71 79 85 118 136 177 199 200
+
+# Training set #8, partition #2
+# Selected potential: 100 => 2MQO 1 ACA
+# Members: 5 6 18 26 27 46 47 48 54 65 68 83 84 100 101 103 104 110 111 165 171 172 204
+
+# Training set #8, partition #3
+# Selected potential: 122 => 3NNH 3 GUU
+# Members: 4 89 96 97 119 120 121 122 123 126 127 132 133 134 198 201 202 203 209 212 219
+
+# Training set #8, partition #4
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 62 63 64 73 74 75 82 93 94 105 106 107 114 115 138 139 144 161 162 173 174 175 176 179 180 182 186 188 192 193 194 197 205
+
+# COMBINE 4N0T 3 ACA 14.6 14.6
+# COMBINE 4N0T 5 AAU 0.0 0.0
+# COMBINE 4N0T 6 AUA 13.7 14.1
+# COMBINE 4N0T 7 UAC 59.7 68.1
+# COMBINE 4N0T 8 ACA 82.7 83.3
+# COMBINE 4N0T 10 AGA 0.6 0.8
+# COMBINE 4N0T 11 GAG 2.3 2.3
+# COMBINE 4N0T 12 AGA 0.9 0.9
+# COMBINE 4N0T 13 GAU 4.1 4.1
+# COMBINE 4N0T 14 AUG 10.3 10.3
+# COMBINE 4N0T 17 AUC 53.9 53.9
+# COMBINE 5TF6 11 GAG 0.0 0.0
+# COMBINE 5TF6 12 AGA 0.2 0.2
+# COMBINE 5TF6 13 GAU 2.9 2.9
+# COMBINE 6ASO 13 GAU 16.7 22.3
+# COMBINE 6ASO 14 AUG 8.0 9.0
+8 1 1 16 [ 23  99 121 174] ['1DRZ 3 UGC', '2MQO 1 ACA', '3NNH 3 GUU', '5MPG 1 UAG']
+**************************************************
+
+# Training set #9, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 100 118 137 171 177 200 201 202 203 204
+
+# Training set #9, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #9, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 93 94 104 105 106 107 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #9, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2KXN 1 AGA 84.3 158.5
+# COMBINE 2KXN 2 GAA 83.2 162.1
+# COMBINE 2KXN 3 AAC 60.5 62.6
+# COMBINE 2RRA 1 AAG 79.9 112.9
+# COMBINE 2RRA 2 AGA 97.8 221.9
+# COMBINE 2RRA 3 GAA 98.6 219.6
+9 6 6 6 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #10, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #10, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 65 68 69 70 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #10, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 63 64 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #10, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2CJK 1 AUA 56.7 56.7
+# COMBINE 2CJK 2 UAU 98.5 102.1
+# COMBINE 2CJK 3 AUA 95.7 155.2
+# COMBINE 2CJK 4 UAU 86.6 143.7
+# COMBINE 2CJK 5 AUA 6.4 6.4
+# COMBINE 2KM8 1 UAU 89.0 121.4
+# COMBINE 2KM8 2 AUA 75.4 103.9
+# COMBINE 2KM8 3 UAU 90.5 153.8
+# COMBINE 2KM8 4 AUA 96.4 160.3
+# COMBINE 2KM8 5 UAU 63.9 96.2
+# COMBINE 2KM8 6 AUA 23.4 23.9
+# COMBINE 2KM8 7 UAA 78.5 78.7
+# COMBINE 2KM8 8 AAU 67.9 68.0
+# COMBINE 2KM8 9 AUA 5.8 5.8
+# COMBINE 2KM8 10 UAA 0.0 0.0
+10 9 10 15 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #11, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 171 177 200 201 202 203 204
+
+# Training set #11, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 151 152 153 183 184 185 190 211
+
+# Training set #11, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 104 105 106 107 114 126 127 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #11, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2MGZ 1 GCA 100.0 100.0
+# COMBINE 2MGZ 2 CAU 98.2 98.2
+# COMBINE 2MGZ 3 AUG 80.6 90.2
+# COMBINE 2MGZ 4 UGG 67.8 115.0
+# COMBINE 2MGZ 5 GGU 86.9 148.7
+# COMBINE 2MGZ 6 GUG 94.4 243.2
+# COMBINE 2MGZ 7 UGU 65.0 111.6
+# COMBINE 2MGZ 8 GUG 48.3 93.2
+# COMBINE 2MGZ 9 UGC 4.9 6.1
+# COMBINE 4CIO 1 GUG 78.1 122.8
+# COMBINE 4CIO 2 UGU 74.8 143.5
+# COMBINE 4CIO 3 GUG 96.2 242.8
+# COMBINE 4CIO 4 UGC 78.4 106.7
+11 9 11 13 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #12, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #12, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #12, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #12, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 1CVJ 1 AAA 51.2 62.8
+# COMBINE 1CVJ 2 AAA 85.5 117.2
+# COMBINE 1CVJ 3 AAA 82.6 102.8
+# COMBINE 1CVJ 4 AAA 13.6 13.6
+# COMBINE 1CVJ 5 AAA 28.5 28.5
+# COMBINE 1CVJ 6 AAA 19.8 19.8
+# COMBINE 4F02 6 AAA 17.8 17.8
+12 2 2 7 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #13, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #13, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #13, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #13, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2MXY 1 UUU 74.2 101.4
+# COMBINE 2MXY 2 UUU 95.3 219.0
+# COMBINE 2MXY 3 UUU 41.0 59.0
+# COMBINE 2MXY 4 UUC 0.0 0.0
+13 2 2 4 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #14, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 44 45 46 47 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #14, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #14, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #14, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 1FJE 1 AAU 29.7 29.7
+# COMBINE 1FJE 2 AUC 30.1 30.2
+# COMBINE 1FJE 3 UCC 89.4 113.7
+# COMBINE 1FJE 4 CCC 95.2 185.7
+# COMBINE 1FJE 5 CCG 80.8 137.3
+# COMBINE 1FJE 7 GAA 43.5 43.6
+# COMBINE 1FJE 8 AAG 0.3 0.3
+# COMBINE 1RKJ 1 UCC 94.4 101.0
+# COMBINE 1RKJ 2 CCC 62.6 78.8
+# COMBINE 1RKJ 3 CCG 92.8 167.2
+# COMBINE 1RKJ 5 GAG 0.0 0.0
+14 6 6 11 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #15, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #15, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #15, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #15, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2N3O 1 UCU 73.0 94.5
+# COMBINE 2N3O 2 CUU 71.9 90.4
+# COMBINE 2N3O 3 UUU 10.9 12.1
+15 2 2 3 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #16, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #16, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190
+
+# Training set #16, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #16, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 6GBM 1 AUU 17.0 17.2
+# COMBINE 6GBM 2 UUC 84.7 157.4
+16 1 1 2 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #17, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #17, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 136 151 152 153 183 184 185 190 211
+
+# Training set #17, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #17, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 156 172 180 195 196 197 198
+
+# COMBINE 4BS2 2 GUG 96.4 131.2
+# COMBINE 4BS2 3 UGA 95.0 147.2
+# COMBINE 4BS2 4 GAA 82.6 131.6
+# COMBINE 4BS2 5 AAU 80.7 92.9
+17 4 4 4 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #18, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #18, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #18, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 186 188 192 193 194 205
+
+# Training set #18, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 5O1Y 1 UAA 80.6 125.4
+18 1 1 1 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #19, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #19, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #19, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #19, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2MKI 1 UUU 37.7 39.4
+# COMBINE 2MKI 2 UUA 54.5 61.3
+19 0 0 2 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #20, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #20, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #20, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #20, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 6GX6 1 CAC 0.1 0.1
+20 0 0 1 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #21, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 115 118 137 171 177 200 201 202 203 204
+
+# Training set #21, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #21, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #21, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2MQO 1 ACA 72.7 100.6
+# COMBINE 2MQO 2 CAC 48.1 62.4
+# COMBINE 2MQO 3 ACA 2.5 2.5
+21 1 1 3 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #22, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #22, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #22, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #22, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2MQP 1 CAC 65.0 91.2
+# COMBINE 2MQP 2 ACA 82.6 145.1
+# COMBINE 2MQP 3 CAC 95.6 140.5
+22 2 3 3 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #23, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #23, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #23, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #23, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2M8D 2 AAG 97.6 98.8
+# COMBINE 2M8D 3 AGG 88.1 103.0
+# COMBINE 2M8D 4 GGA 57.9 64.1
+# COMBINE 2M8D 5 GAC 2.7 3.0
+23 2 2 4 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #24, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 137 171 177 200 201 202 203 204
+
+# Training set #24, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #24, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #24, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2XS7 1 GUU 86.2 183.9
+24 1 1 1 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #25, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #25, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #25, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #25, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2KG0 1 GGG 96.7 102.5
+# COMBINE 2KG0 2 GGA 84.7 87.8
+# COMBINE 2KG0 3 GAU 48.8 49.1
+25 2 2 3 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #26, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 177 200 201 202 203 204
+
+# Training set #26, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #26, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #26, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 180 195 196 197 198
+
+# COMBINE 5DET 1 UCA 94.4 143.5
+# COMBINE 5DET 2 CAC 99.4 182.2
+26 2 2 2 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #27, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #27, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #27, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #27, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 2G4B 1 UUU 98.2 188.3
+# COMBINE 2G4B 2 UUU 97.8 179.4
+# COMBINE 2G4B 3 UUU 96.3 156.0
+27 3 3 3 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #28, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #28, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #28, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #28, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 3MOJ 1 GUU 92.9 125.1
+# COMBINE 3MOJ 2 UUC 56.1 56.4
+28 1 1 2 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+# Training set #29, partition #1
+# Selected potential: 45 => 1M5K 4 GCA
+# Members: 4 5 6 18 24 25 26 27 31 32 33 44 45 46 47 48 49 52 53 54 84 100 115 118 137 171 177 200 201 202 203 204
+
+# Training set #29, partition #2
+# Selected potential: 151 => 4N0T 10 AGA
+# Members: 41 58 65 68 69 70 78 79 85 86 110 111 113 132 133 134 136 151 152 153 183 184 185 190 211
+
+# Training set #29, partition #3
+# Selected potential: 175 => 5MPG 1 UAG
+# Members: 13 17 40 50 59 60 63 64 73 74 75 82 83 93 94 104 105 106 107 114 126 127 138 139 144 161 162 173 174 175 176 179 182 186 188 192 193 194 205
+
+# Training set #29, partition #4
+# Selected potential: 196 => 6DCL 5 UUA
+# Members: 1 2 3 62 66 67 72 89 90 91 119 121 122 135 156 172 180 195 196 197 198
+
+# COMBINE 3RW6 1 AAG 45.5 45.5
+# COMBINE 3RW6 2 AGA 3.4 3.4
+# COMBINE 3RW6 3 GAC 0.1 0.1
+29 0 0 3 [ 44 150 174 195] ['1M5K 4 GCA', '4N0T 10 AGA', '5MPG 1 UAG', '6DCL 5 UUA']
+**************************************************
+
+Successes: 96
