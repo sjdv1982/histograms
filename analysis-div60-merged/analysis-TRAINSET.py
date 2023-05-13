@@ -26,7 +26,7 @@ for l in open("/home/sjoerd/histograms-data/rescore-div60-merged/aliases.txt"):
     scoresets.append(ll[0])
     aliases[ll[0]] = ll[-1]
 
-    assert len(run_names) == len(pct), (len(run_names), len(pct))
+assert len(run_names) == len(pct), (len(run_names), len(pct))
 
 success = (pct >= THRESHOLD)
 to_select = 4
