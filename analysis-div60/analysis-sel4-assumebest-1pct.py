@@ -2,21 +2,16 @@
 220 cases
 TO REMOVE: 1A9N-11-CCU (#7), 4QQB-11-CAC (#166), 4BS2-1-UGU (#131)
 => 217 cases
-
-ATTRACT: 46 successes
-  in the top 20pct (threshold: 60 % of all natives)
-awk '$1 > 60' ATTRACT-5A-top20pct.txt  | wc -l
-
-select 4: 96 successes
 """
 
 import numpy as np
 import os
 
-THRESHOLD = 60   
-PCT_THRESHOLD = 5 
+THRESHOLD = 60
+PCT_THRESHOLD = 5
 error_runs = [7, 166,131]
 pct = np.loadtxt("histo-5A-top5pct.txt").astype(float)
+pct_1pct = np.loadtxt("histo-5A-top1pct.txt").astype(float)
 assert pct.shape[0] == pct.shape[1], pct.shape
 
 run_names = [l.strip() for l in open("curben.in-elem")]
@@ -85,8 +80,7 @@ def get_selection(success_submatrix):
     assert best == best2, (best, best2)
     return selected
 
-"""
-nsuccess = 0
+stats = []
 done = set()
 for redundancy_set in range(1000):
     f = "redundancy/redundancy-set-{}-indices.txt".format(redundancy_set+1)
@@ -101,10 +95,14 @@ for redundancy_set in range(1000):
     rows_test_set = [n for n in range(len(pct)) if n+1 in test_set and n+1 not in error_runs]
     selected0 = sorted(get_selection(success_submatrix0[rows_training_set]))
     ###selected0 = get_selection(success_submatrix0[rows_test_set]) #to test overfitting...
+    if redundancy_set == 0:
+        selected0 = [knr for knr,k in enumerate(columns_to_keep) \
+            if k in [174,  63,  71, 150]]
     success_submatrix = success_submatrix0[rows_test_set]
     success_testset_minimum = success_submatrix[:, selected0].max(axis=1)    
     nsuccess_testset_minimum = success_testset_minimum.sum()
     pct_testset = pct[:, columns_to_keep][rows_test_set, :][:, selected0]
+    pct_testset_1pct = pct_1pct[:, columns_to_keep][rows_test_set, :][:, selected0]
     pct_sum_testset = pct_testset.sum(axis=1)
     selected = np.array(columns_to_keep)[selected0]
     selected_run_names =  [rn for i,rn in enumerate(run_names) if i in selected]
@@ -119,98 +117,22 @@ for redundancy_set in range(1000):
             partitions[p.argmax()].append(row)
     assert nsuccess_trainset_minimum_CHECK == nsuccess_trainset_minimum
 
-    '''
-    for n in range(to_select):
-        print("# Training set #{}, partition #{}".format(redundancy_set+1 ,n+1))
-        print("# Selected potential: {} => {}".format(selected[n] + 1, selected_run_names[n]))
-        print("# Members: {}".format(" ".join([str(i+1) for i in partitions[n]])))
-        print()
-    '''
-
-    rows_test_set = rows_training_set ###
-    nsuccess_testset = 0
     for rownr, row in enumerate(rows_test_set):
-        # comment out below to get exact percentages                   
-        '''
-        # we know it is going to succeed or to fail
-        if success_testset_minimum[rownr]:
-            nsuccess_testset += 1
-            continue
-        if pct_sum_testset[rownr] < THRESHOLD:
-            continue
-        '''
-        all_natives = set()
-        nnat = None
-        for column_nr, column in enumerate(selected):
-            #if pct_testset[rownr, column_nr] == 0:
-            #    continue
-            natives, nnat0 = get_rank_natives(run_names[row], run_names[column], PCT_THRESHOLD)
-            if nnat is None:
-                nnat = nnat0
-            else:
-                assert nnat == nnat0
-            all_natives.update(natives)
-        combined_pct = len(all_natives)/nnat * 100
-        #print("# COMBINE", run_names[row], "%.1f" % combined_pct, "%.1f" % pct_sum_testset[rownr])
-        if combined_pct > THRESHOLD:
-            nsuccess_testset += 1
-    #print(redundancy_set+1, nsuccess_testset_minimum, nsuccess_testset, len(rows_test_set), selected, selected_run_names)
-    print(redundancy_set+1, nsuccess_testset, len(rows_test_set), "({:.2f})".format(100*nsuccess_testset/len(rows_test_set)))
-    #print("*" * 50)
-    #print()
-    nsuccess += nsuccess_testset
+        assert len(pct_testset[rownr]) == to_select
+        x = pct_testset_1pct[rownr].argmax()
+        print(run_names[row], pct_testset_1pct[rownr].max(), selected_run_names[x])
+        stats.append((run_names[row], pct_testset_1pct[rownr].max()))
+
     for run in test_set:
         done.add(run)
 
 assert len(done) == len(pct)
-print("Successes:", nsuccess)
-"""
 
-# Partition on the full set (for coneptual paper)
-# 129/217 successes vs 96/217 for train/test
+cmpl = {}
+for run_name, p in stats:
+    c = run_name.split()[0]
+    if p > cmpl.get(c, -1):
+        cmpl[c] = p
 
-tokeep = [n for n in range(len(pct)) if n+1 not in error_runs]
-success = success[tokeep][:, tokeep]
-pct = pct[tokeep][:, tokeep]
-run_names = [r for rnr, r in enumerate(run_names) if rnr in tokeep]
-
-selected = sorted(get_selection(success))
-success_minimum = success[:, selected].max(axis=1)    
-nsuccess_minimum = success_minimum.sum()
-pct2 = pct[:, selected]
-pct2_sum = pct2.sum(axis=1)
-nsuccess = 0
-for row in range(len(success)):
-    if success_minimum[row]:
-        nsuccess += 1
-        continue
-    if pct2_sum[row] < THRESHOLD:
-        continue
-    all_natives = set()
-    nnat = None
-    for column_nr, column in enumerate(selected):
-        if pct2[row, column_nr] == 0:
-            continue
-        natives, nnat0 = get_rank_natives(run_names[row], run_names[column], PCT_THRESHOLD)
-        if nnat is None:
-            nnat = nnat0
-        else:
-            assert nnat == nnat0
-        all_natives.update(natives)
-    combined_pct = len(all_natives)/nnat * 100
-    #print("COMBINE", pct2[row], pct2_sum[row], combined_pct)
-    if combined_pct > THRESHOLD:
-        nsuccess += 1
-print()
-print("Success on full set (no train vs test):", nsuccess)
-print()
-print("# Selection")
-for selnr, sel in enumerate(selected):
-    print("#{}".format(selnr+1), run_names[sel])
-print()
-
-print("# Partition")
-print("# complex fragnr frag best_partition pct_best_partition")
-for n in range(len(success)):
-    p = pct[n, selected]
-    print(run_names[n], p.argmax()+1, p.max(), p)
+for c in cmpl:
+    print(c, cmpl[c])
